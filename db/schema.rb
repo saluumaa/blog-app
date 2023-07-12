@@ -36,6 +36,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_155150) do
   create_table "posts", force: :cascade do |t|
     t.string "title", limit: 50, null: false
     t.text "text"
+    t.integer "likes_counter", default: 0
+    t.integer "comments_counter", default: 0
     t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,6 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_12_155150) do
     t.string "name", limit: 50, null: false
     t.string "photo"
     t.string "bio", limit: 500
+    t.integer "posts_counter", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

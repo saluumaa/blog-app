@@ -24,7 +24,7 @@ default: &default
 development:
   <<: *default
   adapter: postgresql
-  database: hellorails_development
+  database: blog_app_development
   username: postgres
   password: sacaada143
   host: localhost
@@ -63,6 +63,8 @@ development:
 test:
   <<: *default
   database: blog_app_test
+  username: postgres
+  password: sacaada143
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
