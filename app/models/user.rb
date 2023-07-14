@@ -4,9 +4,7 @@ class User < ApplicationRecord
   has_many :likes, foreign_key: :author_id
 
 
-def posts_counter
-  posts.order(created_at: :desc).count
+  def posts_counter
+    posts.order(created_at: :desc).count
+  end
 end
-
-end
-
