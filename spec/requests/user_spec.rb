@@ -33,7 +33,7 @@ RSpec.describe 'Users', type: :request do
 
     it 'includes correct placeholder text' do
       get user_path(user)
-      expect(response.body).to include("<p>Here is a list of user with the given ID </p>")
+      expect(response.body).to include('<p>Here is a list of user with the given ID </p>')
     end
   end
 end
