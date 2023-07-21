@@ -1,1 +1,29 @@
-<p> Here is a list of posts by user ID </p>
+<h1>Listing posts</h1>
+
+<div class="posts-container">
+  <div class="username-holder">
+    <img src="<%= @user.photo %>" alt="user photo">
+    <%= @user.name %>
+    <p>Number of posts <%= @user.posts.count %></p>
+  </div>
+
+  <div class="posts">
+    <% @posts.each do |post| %>
+        <a href="./<%= post.id %>">
+        <h2><%= post.title %></h2>
+        <p><%= post.text %></p>
+        <span>comments <%= post.comments_counter %>: likes <%= post.likes_counter %></span>
+      </a>
+    <% end %>
+  </div>
+
+  <div class="comments">
+    <% @posts.each do |post| %>
+      <% post.recent_comment_count.each do |comment| %>
+        <div class="single-comment">
+          <span><%= comment.author.name %>  : <%= comment.text %></span>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
