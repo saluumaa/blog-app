@@ -1,20 +1,19 @@
-<% begin %>
-  Here is a list of post by user ID:
-<% end %>
-
+<div class="comments-container">
 <div class="comment-wrapper">
   <div class="comment-head">
-    <h1 class="post-title">
+  <div class="posts">
+    <h2 class="post-title">
       <%= @post.title %> By <%= @post.author.name %>
-    </h1>
+    </h2>
+    </div>
     <div class="comments-likes">
-      <p>comments: <%= @post.comments_counter %></p>
-      <p>likes: <%= @post.likes_counter %></p>
+      <span>comments: <%= @post.comments_counter %>,</span>
+      <span>likes: <%= @post.likes_counter %></span>
     </div>
   </div>
 
   <p><%= @post.text %></p>
-
+  </div>
   <div class="comments">
     <% @comments.each do |comment| %>
       <div class="single-comment">

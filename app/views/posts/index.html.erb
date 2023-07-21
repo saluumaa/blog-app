@@ -3,27 +3,32 @@
 <div class="posts-container">
   <div class="username-holder">
     <img src="<%= @user.photo %>" alt="user photo">
-    <%= @user.name %>
+    <div class="user-detail">
+    <h1><%= @user.name %></h1>
     <p>Number of posts <%= @user.posts.count %></p>
+    </div>
   </div>
 
   <div class="posts">
     <% @posts.each do |post| %>
+        <div class="one-comment">
         <a href="./<%= post.id %>">
         <h2><%= post.title %></h2>
         <p><%= post.text %></p>
-        <span>comments <%= post.comments_counter %>: likes <%= post.likes_counter %></span>
-      </a>
-    <% end %>
-  </div>
+        <div class="comments-likes">
+        <span>comments <%= post.comments_counter %>,</span>
+        <span>likes <%= post.likes_counter %></span>
+        </div>
 
-  <div class="comments">
-    <% @posts.each do |post| %>
+  <div class="comments-container">
       <% post.recent_comment_count.each do |comment| %>
         <div class="single-comment">
           <span><%= comment.author.name %>  : <%= comment.text %></span>
         </div>
       <% end %>
+      </div>
+      </a>
+      </div>
     <% end %>
   </div>
 </div>

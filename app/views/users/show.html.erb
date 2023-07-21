@@ -3,8 +3,7 @@
 <div class="user-info">
   <div class="user-photo">
     <%= image_tag @user.photo %>
-  </div>
-  <div class="user-description">
+    <div class="user-description">
     <h1><%= @user.name %></h1>
     <p>number of posts: <%= @user.posts.count %></p>
   </div>
@@ -15,7 +14,6 @@
   <p><%= @user.bio %></p>
 </div>
 
-<h2>Posts</h2>
 <div class="user-posts">
   <% @user.posts.each do |post| %>
     <div class="one-post">
@@ -30,4 +28,7 @@
       </a>
     </div>
   <% end %>
+  <a href="<%=@user.id%>/posts/" class="button">See all posts</a>
 </div>
+</div>
+
