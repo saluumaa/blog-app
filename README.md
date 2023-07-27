@@ -122,10 +122,6 @@ To run tests, run the following command:
   rspec
 ```
 
-### Deployment
-
-  - [N/A]
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
