@@ -14,6 +14,16 @@
 
   <p><%= @post.text %></p>
   </div>
+
+  <div class="like-form">
+  <h2>Leave a like</h2>
+   <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |form|%>
+      <%= form.submit 'Like', class: 'like-button' %>
+   <% end %>
+   <button type="button" class="like-button">
+   <%= link_to "Comment", new_user_post_comment_path( post_id: @post.id), { class: "comment-link" } %></button>
+</div>
+
   <div class="comments">
     <% @comments.each do |comment| %>
       <div class="single-comment">
