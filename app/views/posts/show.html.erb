@@ -1,1 +1,25 @@
-<p> Here is a list of all posts: </p>
+<div class="comments-container">
+<div class="comment-wrapper">
+  <div class="comment-head">
+  <div class="posts">
+    <h2 class="post-title">
+      <%= @post.title %> By <%= @post.author.name %>
+    </h2>
+    </div>
+    <div class="comments-likes">
+      <span>comments: <%= @post.comments_counter %>,</span>
+      <span>likes: <%= @post.likes_counter %></span>
+    </div>
+  </div>
+
+  <p><%= @post.text %></p>
+  </div>
+  <div class="comments">
+    <% @comments.each do |comment| %>
+      <div class="single-comment">
+        <span><%= comment.author.name %> : <%= comment.text %></span>
+      </div>
+    <% end %>
+  </div>
+</div>
+
