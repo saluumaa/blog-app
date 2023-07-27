@@ -10,7 +10,7 @@ class PostsController < ApplicationController
     @like = Like.new
   end
 
-  def new 
+  def new
     @user = current_user
     @post = Post.new
   end
@@ -28,7 +28,8 @@ class PostsController < ApplicationController
   end
 
   private
+
   def post_params
-    params.require(:post).permit(:title,:text)
+    params.require(:post).permit(:title, :text)
   end
 end
