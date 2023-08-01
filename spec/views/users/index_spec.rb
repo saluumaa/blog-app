@@ -1,6 +1,6 @@
 require 'rails_helper'
-RSpec.describe "User index page", type: :feature do
-  let!(:user) { User.create(name: 'salma', bio: "I am a software engineer", photo: "https://images.unsplash.com/photo-1612833603922-3b3b3b4b4b4b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c29mdHdhcmUlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80") }
+RSpec.describe 'User index page', type: :feature do
+  let!(:user) { User.create(name: 'salma', bio: 'I am a software engineer', photo: 'https://images.unsplash.com/photo-1612833603922-3b3b3b4b4b4b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c29mdHdhcmUlMjBlbmdpbmVlcmluZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80') }
   let!(:post) { Post.create(title: 'My first post', text: 'This is my first post', author: user) }
   before do
     visit users_path
