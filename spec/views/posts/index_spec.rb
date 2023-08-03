@@ -42,6 +42,10 @@ RSpec.describe 'User post index page', type: :feature do
     expect(page).to have_content("likes: #{post.likes_counter}")
   end
 
+  it 'dispays the pagination button' do
+    expect(page).to have_button('Pagination')
+  end
+
   it 'redirects to the post list page when click a single post' do
     click_link post.title
     expect(current_path).to eq(user_post_path(user.id, post.id))
