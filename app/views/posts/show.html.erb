@@ -1,28 +1,27 @@
 <div class="comments-container">
-<div class="comment-wrapper">
-  <div class="comment-head">
-  <div class="posts">
-    <h2 class="post-title">
-      <%= @post.title %> By <%= @post.author.name %>
-    </h2>
+  <div class="comment-wrapper">
+    <div class="comment-head">
+      <h2 class="post-title">
+        <%= @post.title %> By <%= @post.author.name %>
+      </h2>
+      <div class="comments-likes">
+        <span>Comments: <%= @post.comments_counter %>,</span>
+        <span>Likes: <%= @post.likes_counter %></span>
+      </div>
     </div>
-    <div class="comments-likes">
-      <span>comments: <%= @post.comments_counter %>,</span>
-      <span>likes: <%= @post.likes_counter %></span>
-    </div>
-  </div>
 
-  <p><%= @post.text %></p>
+    <p><%= @post.text %></p>
   </div>
 
   <div class="like-form">
-  <h2>Leave a like</h2>
-   <%= form_with model: @like, url: user_post_likes_path(1, @post), scope: :like do |form|%>
+    <h2>Leave a like</h2>
+    <%= form_with model: @like, url: user_post_likes_path(@post.author, @post), scope: :like do |form| %>
       <%= form.submit 'Like', class: 'like-button' %>
-   <% end %>
-   <button type="button" class="like-button">
-   <%= link_to "Comment", new_user_post_comment_path( post_id: @post.id), { class: "comment-link" } %></button>
-</div>
+    <% end %>
+    <button type="button" class="like-button">
+      <%= link_to "Comment", new_user_post_comment_path(post_id: @post.id), { class: "comment-link" } %>
+    </button>
+  </div>
 
   <div class="comments">
     <% @comments.each do |comment| %>
@@ -32,4 +31,3 @@
     <% end %>
   </div>
 </div>
-
